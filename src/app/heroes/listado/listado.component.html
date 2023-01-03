@@ -7,7 +7,6 @@
 <button (click)="borrarHeroe()">Borrar heroe</button>
 
 <br>
-<div>
-  <h3>Heroe borrado</h3>
-  <span>{{heroeBorrado}}</span>
+<div *ngIf="heroeBorrado != '' ">
+  <h3>Heroe borrado<small>{{heroeBorrado}}</small></h3>
 </div>
