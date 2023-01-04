@@ -26,6 +26,7 @@ export class MainPageComponent {
   }
 
   agregarNuevoPersonaje(dato: Personaje){
+    // debugger
     this.personajes.push(dato);
   }
 
