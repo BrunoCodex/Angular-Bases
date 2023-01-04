@@ -21,17 +21,8 @@ export class MainPageComponent {
   ]
 
   nuevo: Personaje = {
-    nombre: '',
-    poder: 0
+    nombre: 'Maestro Roshi',
+    poder: 1200
   }
 
-  agregar(){
-    // console.log("Evento de formulario "+this.nuevo.nombre+" - "+this.nuevo.poder);
-    if(this.nuevo.nombre.trim().length === 0){ return; }
-    this.personajes.push(this.nuevo);
-    this.nuevo = {
-      nombre : '',
-      poder : 0
-    }
-  }
 }
