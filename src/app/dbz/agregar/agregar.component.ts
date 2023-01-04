@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 @Component({
@@ -8,8 +8,8 @@ import { Personaje } from '../interfaces/dbz.interface';
 })
 export class AgregarComponent {
 
-  @Input()
-  personajes: Personaje[] = [];
+  // @Input() // YA no va por que va a ser un output y va interactura con el padre
+  // personajes: Personaje[] = [];
 
   @Input()
   nuevo: Personaje = {
@@ -17,10 +17,15 @@ export class AgregarComponent {
     poder: 0
   }
 
+  @Output()
+  onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+
   agregar(){
     // console.log("Evento de formulario "+this.nuevo.nombre+" - "+this.nuevo.poder);
     if(this.nuevo.nombre.trim().length === 0){ return; }
-    this.personajes.push(this.nuevo);
+
+    this.onNuevoPersonaje.emit(this.nuevo);
+    // this.personajes.push(this.nuevo);
     this.nuevo = {
       nombre : '',
       poder : 0
