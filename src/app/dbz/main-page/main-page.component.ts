@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
-
+  agregar(){
+    console.log("Evento de formulario");
+  }
 }
